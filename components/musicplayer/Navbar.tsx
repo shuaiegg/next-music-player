@@ -8,6 +8,7 @@ const Navbar = () => {
             <div className="flex gap-5">
                 <Link href="/">All Songs</Link>
                 <Link href="/playlists">PlayLists</Link>
+                <Link href="/about">About</Link>
             </div>
             </div>
         </nav>
