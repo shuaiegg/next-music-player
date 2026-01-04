@@ -1,20 +1,22 @@
 import MusicPlayer from "@/components/musicplayer/MusicPlayer";
-import Navbar from "@/components/musicplayer/Navbar";
 import MusicSection from "@/components/musicplayer/MusicSection";
 import { AllSongs } from "@/components/musicplayer/AllSongs";
 
 function Home() {
-
   return (
-    <main className="main">
-    <div className="player-section">
-      
-      <MusicPlayer />
-    </div>
-    <div className="content-section">
-      <AllSongs />
-      <MusicSection />
-    </div>
+    <main className="min-h-screen w-full px-4 py-6 md:px-12 lg:px-24">
+      <div className="grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8">
+        {/* Player sidebar */}
+        <div className="lg:sticky lg:top-6 lg:self-start">
+          <MusicPlayer />
+        </div>
+
+        {/* Content area */}
+        <div className="flex flex-col gap-8">
+          <AllSongs />
+          <MusicSection />
+        </div>
+      </div>
     </main>
   );
 }
