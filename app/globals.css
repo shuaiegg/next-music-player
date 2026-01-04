@@ -1,13 +1,119 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* ========== Base Styles ========== */
 body {
   min-height: 100vh;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   color: #fff;
 }
 
-/* Range slider styling */
+/* ========== Glass Card ========== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card-sm {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+}
+
+/* ========== Gradient Text ========== */
+.gradient-text {
+  background: linear-gradient(to right, #c084fc, #f472b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-accent {
+  background: linear-gradient(to right, #f472b6, #fb7185, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========== Control Buttons ========== */
+.control-btn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+}
+
+.play-btn {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #a855f7, #7c3aed);
+  box-shadow: 0 4px 20px rgba(138, 43, 226, 0.5);
+  transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.5), 0 0 60px rgba(138, 43, 226, 0.5);
+}
+
+/* ========== Song Card ========== */
+.song-card {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.song-card:hover {
+  transform: translateX(0.5rem);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(138, 43, 226, 0.5);
+}
+
+.song-card.active {
+  background: linear-gradient(to right, rgba(168, 85, 247, 0.3), rgba(124, 58, 237, 0.3));
+  border-color: rgba(168, 85, 247, 0.5);
+}
+
+/* ========== Section Header ========== */
+.section-header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #c084fc, #f472b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========== Range Slider ========== */
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
@@ -45,4 +151,13 @@ input[type="range"]::-moz-range-thumb {
   background: #f093fb;
   border: none;
   box-shadow: 0 0 10px rgba(240, 147, 251, 0.6);
+}
+
+/* ========== Utilities ========== */
+.text-muted {
+  color: #9ca3af;
+}
+
+.text-muted-dark {
+  color: #6b7280;
 }

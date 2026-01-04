@@ -73,20 +73,20 @@ const MusicPlayer = () => {
     }, [currentTrack, setCurrentTime, setDuration])
 
     return (
-        <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-6 flex flex-col gap-5 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+        <div className="glass-card p-6 flex flex-col gap-5">
             <audio ref={audioRef} src={currentTrack.url} preload="metadata" crossOrigin="anonymous" />
 
             {/* Track info */}
             <div className="text-center">
-                <h3 className="text-xl font-bold mb-1 bg-gradient-to-r from-pink-400 via-rose-400 to-purple-500 bg-clip-text text-transparent">
+                <h3 className="text-xl font-bold mb-1 gradient-text-accent">
                     {currentTrack?.title}
                 </h3>
-                <p className="text-gray-400 text-sm">{currentTrack?.artist}</p>
+                <p className="text-muted text-sm">{currentTrack?.artist}</p>
             </div>
 
             {/* Progress bar */}
             <div className="flex items-center gap-3">
-                <span className="text-xs text-gray-400 min-w-10">{formatTime(currentTime)}</span>
+                <span className="text-xs text-muted min-w-10">{formatTime(currentTime)}</span>
                 <input
                     onChange={handleTimeChange}
                     type="range"
@@ -96,34 +96,25 @@ const MusicPlayer = () => {
                     value={currentTime || 0}
                     className="flex-1"
                 />
-                <span className="text-xs text-gray-400 min-w-10">{formatTime(duration)}</span>
+                <span className="text-xs text-muted min-w-10">{formatTime(duration)}</span>
             </div>
 
             {/* Controls */}
             <div className="flex justify-center items-center gap-4">
-                <button
-                    onClick={prevTrack}
-                    className="w-12 h-12 rounded-full flex items-center justify-center bg-white/10 border border-white/20 hover:scale-110 hover:shadow-[0_0_20px_rgba(138,43,226,0.5)] transition-all duration-300"
-                >
+                <button onClick={prevTrack} className="control-btn">
                     <SkipBack size={20} />
                 </button>
-                <button
-                    onClick={() => isPlaying ? pause() : play()}
-                    className="w-16 h-16 rounded-full flex items-center justify-center bg-gradient-to-br from-purple-500 to-purple-700 shadow-[0_4px_20px_rgba(138,43,226,0.5)] hover:shadow-[0_0_30px_rgba(255,105,180,0.5),0_0_60px_rgba(138,43,226,0.5)] hover:scale-110 transition-all duration-300"
-                >
+                <button onClick={() => isPlaying ? pause() : play()} className="play-btn">
                     {isPlaying ? <Pause size={28} /> : <Play size={28} className="ml-1" />}
                 </button>
-                <button
-                    onClick={nextTrack}
-                    className="w-12 h-12 rounded-full flex items-center justify-center bg-white/10 border border-white/20 hover:scale-110 hover:shadow-[0_0_20px_rgba(138,43,226,0.5)] transition-all duration-300"
-                >
+                <button onClick={nextTrack} className="control-btn">
                     <SkipForward size={20} />
                 </button>
             </div>
 
             {/* Volume */}
             <div className="flex items-center gap-3 px-2">
-                <Volume2 size={18} className="text-gray-400" />
+                <Volume2 size={18} className="text-muted" />
                 <input
                     type="range"
                     min="0"
