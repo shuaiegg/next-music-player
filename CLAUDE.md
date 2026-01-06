@@ -27,6 +27,8 @@ This is a Next.js 16 music player application using the App Router, React 19, Ta
 
 **Type Definitions**: Shared types in `lib/types.ts` (Song, Card interfaces)
 
+**Utilities**: `lib/utils.ts` exports `cn()` for merging Tailwind classes (shadcn/ui pattern)
+
 **Audio Files**: Stored in `public/songs/` as `.wav` files
 
 ### Path Aliases
@@ -39,6 +41,7 @@ Configured in tsconfig.json:
 ## Conventions
 
 - When creating new page components, always add a link to that page in the header (`components/musicplayer/Navbar.tsx`)
+- Use Context7 to check up-to-date docs when needed for implementing new libraries or frameworks, or adding features using them. 
 
 ## UI Style Guide
 
@@ -56,3 +59,5 @@ Configured in tsconfig.json:
 - Glow effects: `shadow-[0_0_20px_rgba(138,43,226,0.5)]`
 
 **Icons**: Use `lucide-react` for all icons (Play, Pause, SkipBack, SkipForward, Volume2, etc.)
+
+

@@ -1,16 +1,17 @@
-import Link  from "next/link"; 
-import Image from "next/image";
+import Link from "next/link"
+import { Avatar } from "@/components/ui/avatar"
 
 const Navbar = () => {
     return (
         <nav className="bg-black text-white flex gap-4 md:gap-0 items-start md:items-center justify-between flex-wrap md:flex-row py-4 px-16">
             <div className="flex items-center gap-4">
-                <span className="bg-white rounded-full text-black w-10 h-10 flex item-center justify-center text-3xl">S</span>
+                <Avatar name="Startup" size="md" />
             <div className="flex gap-4">
                 <Link href="/" className="navLink">Home</Link>
                 <Link href="/about" className="navLink">About</Link>
                 <Link href="/contact" className="navLink">Contact</Link>
                 <Link href="/contact" className="navLink">Shop</Link>
+                <Link href="/preview" className="navLink">Preview</Link>
             </div>
             </div>
             <div className="flex gap-4 items-center">
